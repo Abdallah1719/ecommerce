@@ -14,4 +14,19 @@ class ProductsTopRatedModel extends ProductsTopRated {
     required super.unitName,
     required super.weight,
   });
+
+  factory ProductsTopRatedModel.fromJson(Map<String, dynamic> json) =>
+      ProductsTopRatedModel(
+        id: json["id"],
+        title: json["title"],
+        rate: json["rate"],
+        discount: json["discount"],
+        priceBeforeDiscount: json["price_before_discount"],
+        image: json["image"],
+        price: json["price"],
+        wishlist: json["wishlist"],
+        cart: json["cart"],
+        unitName: json["unit_name"],
+        weight: json["weight"],
+      );
 }
