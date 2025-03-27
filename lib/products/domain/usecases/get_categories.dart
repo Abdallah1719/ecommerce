@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:ecommerce_app/core/error/failure.dart';
 import 'package:ecommerce_app/products/domain/entities/categories.dart';
 import 'package:ecommerce_app/products/domain/repository/base_products_repo.dart';
 
@@ -6,7 +8,7 @@ class GetCategories {
 
   GetCategories({required this.baseProductsRepo});
 
-  Future<List<Categories>> execute() async {
+  Future<Either<Failure, List<Categories>>> execute() async {
     return await baseProductsRepo.getCategories();
   }
 }
