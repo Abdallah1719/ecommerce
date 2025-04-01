@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/global/routes/routes.dart';
 import 'package:ecommerce_app/core/global/theme/cubit/theme_cubit.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/l10n/cubit/local_cubit.dart';
@@ -29,7 +30,8 @@ class App extends StatelessWidget {
                   duration: Duration(seconds: 2),
                   curve: Curves.decelerate,
                 ),
-                home: MyWidget(),
+                initialRoute: '/',
+                routes: AppRoutes.routes,
               );
             },
           );
