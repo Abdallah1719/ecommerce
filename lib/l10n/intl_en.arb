@@ -1,3 +1,14 @@
 {
-    "title" : "title"
+    "title" : "title",
+    "search_text": "what are you looking for ?",
+    "working_hours" : "Working hours from 10 am to 11 pm",
+    "viewAll": "View All",
+    "categoriess": "Categoriess",
+    "popularProducts": "Popular Products",
+    "shopNow": "Shop Now",
+    "addToCart": "Add To Cart",
+    "account": "Account",
+    "home": "Home",
+    "cart": "Cart"
+    
 }

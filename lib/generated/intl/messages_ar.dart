@@ -22,6 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "title": MessageLookupByLibrary.simpleMessage("عنوان")
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "addToCart": MessageLookupByLibrary.simpleMessage("إضافة إلى السلة"),
+        "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+        "categoriess": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "popularProducts":
+            MessageLookupByLibrary.simpleMessage("المنتجات الشهيرة"),
+        "search_text":
+            MessageLookupByLibrary.simpleMessage("ما الذي تبحث عنه ؟"),
+        "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
+        "title": MessageLookupByLibrary.simpleMessage("عنوان"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+        "working_hours":
+            MessageLookupByLibrary.simpleMessage("ساعات العمل من ١٠ص الى ١١ م")
       };
 }

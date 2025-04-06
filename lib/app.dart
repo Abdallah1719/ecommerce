@@ -24,7 +24,7 @@ class App extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 supportedLocales: S.delegate.supportedLocales,
                 localizationsDelegates: LocaleCubit.localizationsDelegates,
-                locale: Locale(locale),
+                locale: Locale('ar'),
                 theme: context.read<ThemeCubit>().currentTheme(),
                 themeAnimationStyle: AnimationStyle(
                   duration: Duration(seconds: 2),
@@ -38,14 +38,5 @@ class App extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(S.of(context).title)));
   }
 }

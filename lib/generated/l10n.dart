@@ -59,6 +59,106 @@ class S {
       args: [],
     );
   }
+
+  /// `what are you looking for ?`
+  String get search_text {
+    return Intl.message(
+      'what are you looking for ?',
+      name: 'search_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Working hours from 10 am to 11 pm`
+  String get working_hours {
+    return Intl.message(
+      'Working hours from 10 am to 11 pm',
+      name: 'working_hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get viewAll {
+    return Intl.message(
+      'View All',
+      name: 'viewAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categoriess`
+  String get categoriess {
+    return Intl.message(
+      'Categoriess',
+      name: 'categoriess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Products`
+  String get popularProducts {
+    return Intl.message(
+      'Popular Products',
+      name: 'popularProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shop Now`
+  String get shopNow {
+    return Intl.message(
+      'Shop Now',
+      name: 'shopNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add To Cart`
+  String get addToCart {
+    return Intl.message(
+      'Add To Cart',
+      name: 'addToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message(
+      'Cart',
+      name: 'cart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
