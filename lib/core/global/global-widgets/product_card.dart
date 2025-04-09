@@ -28,7 +28,7 @@ class ProductCard extends StatelessWidget {
 
           // زر الإضافة إلى السلة
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.all(12),
             child: ElevatedButton.icon(
               onPressed: () {},
               style: ElevatedButton.styleFrom(

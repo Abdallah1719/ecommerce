@@ -24,7 +24,7 @@ class App extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 supportedLocales: S.delegate.supportedLocales,
                 localizationsDelegates: LocaleCubit.localizationsDelegates,
-                locale: Locale('ar'),
+                locale: Locale(locale),
                 theme: context.read<ThemeCubit>().currentTheme(),
                 themeAnimationStyle: AnimationStyle(
                   duration: Duration(seconds: 2),

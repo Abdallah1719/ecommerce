@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/global/global-widgets/custom_size_box.dart';
 import 'package:ecommerce_app/core/global/global-widgets/global_appbar.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/products/presentation/components/categories_listview.dart';
