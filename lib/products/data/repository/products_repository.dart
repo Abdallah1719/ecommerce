@@ -10,7 +10,7 @@ import 'package:ecommerce_app/products/domain/repository/base_products_repositor
 class ProductsRepository extends BaseProductsRepository {
   final BaseProductsDataSource baseProductsDataSource;
 
-  ProductsRepository({required this.baseProductsDataSource});
+  ProductsRepository(this.baseProductsDataSource);
   @override
   Future<Either<Failure, List<Categories>>> getCategories() async {
     final result = await baseProductsDataSource.getCategories();

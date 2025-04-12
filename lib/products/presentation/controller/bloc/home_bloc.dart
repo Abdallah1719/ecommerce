@@ -11,16 +11,10 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeState()) {
+  final GetHomeSlidersUseCase getHomeSlidersUseCase;
+  HomeBloc(this.getHomeSlidersUseCase) : super(HomeState()) {
     on<HomeEvent>((event, emit) async {
-      BaseProductsDataSource baseProductsDataSource = ProductsDataSource();
-      BaseProductsRepository baseProductsRepository = ProductsRepository(
-        baseProductsDataSource: baseProductsDataSource,
-      );
-      final result =
-          await GetHomeSlidersUseCase(
-            baseProductsRepo: baseProductsRepository,
-          ).execute();
+      final result = await getHomeSlidersUseCase.execute();
       print(result);
     });
   }

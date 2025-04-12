@@ -6,7 +6,7 @@ import 'package:ecommerce_app/products/domain/repository/base_products_repositor
 class GetHomeSlidersUseCase {
   final BaseProductsRepository baseProductsRepo;
 
-  GetHomeSlidersUseCase({required this.baseProductsRepo});
+  GetHomeSlidersUseCase(this.baseProductsRepo);
 
   Future<Either<Failure, List<HomeSliders>>> execute() async {
     return await baseProductsRepo.getHomeSliders();
