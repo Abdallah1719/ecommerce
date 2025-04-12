@@ -2,12 +2,15 @@ import 'package:ecommerce_app/products/data/data_source/remote_data_source/produ
 import 'package:ecommerce_app/products/data/repository/products_repository.dart';
 import 'package:ecommerce_app/products/domain/repository/base_products_repository.dart';
 import 'package:ecommerce_app/products/domain/usecases/get_home_sliders_usecase.dart';
+import 'package:ecommerce_app/products/presentation/controller/bloc/home_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt sl = GetIt.instance;
 
 class ServiceLocator {
   void init() {
+    //Bloc
+    sl.registerFactory(() => HomeBloc(sl()));
     // Data Source
     sl.registerLazySingleton<BaseProductsDataSource>(
       () => ProductsDataSource(),
@@ -18,8 +21,6 @@ class ServiceLocator {
     );
 
     //Use Cases
-    sl.registerLazySingleton<GetHomeSlidersUseCase>(
-      () => GetHomeSlidersUseCase(sl()),
-    );
+    sl.registerLazySingleton(() => GetHomeSlidersUseCase(sl()));
   }
 }

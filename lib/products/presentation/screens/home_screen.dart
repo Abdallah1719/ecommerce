@@ -1,9 +1,7 @@
 import 'package:ecommerce_app/core/global/global-widgets/global_appbar.dart';
 import 'package:ecommerce_app/core/services/service_locator.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
-import 'package:ecommerce_app/products/data/data_source/remote_data_source/products_data_source.dart';
-import 'package:ecommerce_app/products/data/repository/products_repository.dart';
-import 'package:ecommerce_app/products/domain/repository/base_products_repository.dart';
+import 'package:ecommerce_app/products/domain/usecases/get_home_sliders_usecase.dart';
 import 'package:ecommerce_app/products/presentation/components/categories_listview.dart';
 import 'package:ecommerce_app/products/presentation/components/home_slider.dart';
 import 'package:ecommerce_app/products/presentation/components/home_titles.dart';
@@ -17,11 +15,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(sl<HomeBloc>().hashCode);
     return BlocProvider(
       create: (context) => HomeBloc(sl())..add(GetHomeSliderEvent()),
+
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          print(state);
           return Scaffold(
             appBar: GlobalAppBar(),
             bottomNavigationBar: BottomNavigationBar(
