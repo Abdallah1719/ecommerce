@@ -5,9 +5,9 @@ import 'package:ecommerce_app/products/data/data_source/remote_data_source/produ
 import 'package:ecommerce_app/products/domain/entities/categories.dart';
 import 'package:ecommerce_app/products/domain/entities/home_sliders.dart';
 import 'package:ecommerce_app/products/domain/entities/products_top_rated.dart';
-import 'package:ecommerce_app/products/domain/repository/base_products_repo.dart';
+import 'package:ecommerce_app/products/domain/repository/base_products_repository.dart';
 
-class ProductsRepository extends BaseProductsRepo {
+class ProductsRepository extends BaseProductsRepository {
   final BaseProductsDataSource baseProductsDataSource;
 
   ProductsRepository({required this.baseProductsDataSource});
