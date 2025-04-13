@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/services/service_locator.dart';
 import 'package:ecommerce_app/core/utils/enums.dart';
 import 'package:ecommerce_app/products/domain/entities/home_sliders.dart';
 import 'package:ecommerce_app/products/domain/usecases/get_home_sliders_usecase.dart';
@@ -13,7 +12,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this.getHomeSlidersUseCase) : super(HomeState()) {
     on<HomeEvent>((event, emit) async {
       final result = await getHomeSlidersUseCase.execute();
-      print(result);
+      emit(HomeState(homeSlidersState: RequestState.loading));
+      result.fold(
+        (l) => emit(
+          HomeState(
+            homeSlidersState: RequestState.error,
+            homeSlidersMessage: l.message,
+          ),
+        ),
+        (r) => emit(
+          (HomeState(homeSlidersState: RequestState.loaded, homeSliders: r)),
+        ),
+      );
     });
   }
 }

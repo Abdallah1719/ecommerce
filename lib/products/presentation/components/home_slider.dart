@@ -185,7 +185,9 @@
 //   }
 // }
 
+import 'package:ecommerce_app/products/presentation/controller/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeSlider extends StatefulWidget {
   const HomeSlider({super.key});
@@ -196,7 +198,7 @@ class HomeSlider extends StatefulWidget {
 
 class _HomeSliderState extends State<HomeSlider> {
   late ScrollController _scrollController;
-  final int _realItemCount = 10; // عدد الصور الحقيقي
+  final int _realItemCount = 2; // عدد الصور الحقيقي
   final double _itemWidth = 300 + 16; // عرض الصورة + الـ padding
   int _currentIndex = 0;
 
@@ -239,26 +241,41 @@ class _HomeSliderState extends State<HomeSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: ListView.builder(
-        controller: _scrollController,
-        scrollDirection: Axis.horizontal,
-        itemCount: _realItemCount, // نعرض فقط الصور الحقيقية
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                'asstes/image1.jpg',
-                width: 300,
-                fit: BoxFit.cover,
-              ),
-            ),
-          );
-        },
-      ),
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        print(state);
+        return SizedBox(
+          height: 200,
+          child: ListView.builder(
+            controller: _scrollController,
+            scrollDirection: Axis.horizontal,
+            itemCount: state.homeSliders.length, // نعرض فقط الصور الحقيقية
+            itemBuilder: (context, index) {
+              final slider = state.homeSliders[index];
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.network(
+                  // استخدم Image.network إذا كانت الصورة من الإنترنت
+                  slider.image, // افترض أن الحقل يحتوي على رابط الصورة
+                  width: 300,
+                  fit: BoxFit.cover,
+                  errorBuilder:
+                      (context, error, stackTrace) =>
+                          Icon(Icons.error), // معالجة الأخطاء (اختياري)
+                ),
+                // ClipRRect(
+                //   borderRadius: BorderRadius.circular(12),
+                //   child: Image.asset(
+                //     'asstes/image1.jpg',
+                //     width: 300,
+                //     fit: BoxFit.cover,
+                //   ),
+                // ),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }

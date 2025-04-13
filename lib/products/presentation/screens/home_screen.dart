@@ -15,53 +15,48 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(sl<HomeBloc>().hashCode);
     return BlocProvider(
-      create: (context) => HomeBloc(sl())..add(GetHomeSliderEvent()),
+      create: (context) => sl<HomeBloc>()..add(GetHomeSliderEvent()),
 
-      child: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
-          return Scaffold(
-            appBar: GlobalAppBar(),
-            bottomNavigationBar: BottomNavigationBar(
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: S.of(context).home,
-                ),
-
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: S.of(context).account,
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart),
-                  label: S.of(context).cart,
-                ),
-              ],
+      child: Scaffold(
+        appBar: GlobalAppBar(),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: S.of(context).home,
             ),
 
-            body: ListView(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Center(child: Text(S.of(context).working_hours)),
-                ),
-                HomeSlider(),
-                HomeTitles(
-                  text: S.of(context).categoriess,
-                  buttonText: S.of(context).viewAll,
-                ),
-                CategoriesListView(),
-                HomeTitles(
-                  text: S.of(context).popularProducts,
-                  buttonText: S.of(context).shopNow,
-                ),
-                ProductGridView(),
-              ],
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: S.of(context).account,
             ),
-          );
-        },
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: S.of(context).cart,
+            ),
+          ],
+        ),
+
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Center(child: Text(S.of(context).working_hours)),
+            ),
+            HomeSlider(),
+            HomeTitles(
+              text: S.of(context).categoriess,
+              buttonText: S.of(context).viewAll,
+            ),
+            CategoriesListView(),
+            HomeTitles(
+              text: S.of(context).popularProducts,
+              buttonText: S.of(context).shopNow,
+            ),
+            ProductGridView(),
+          ],
+        ),
       ),
     );
   }
