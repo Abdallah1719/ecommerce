@@ -10,10 +10,12 @@ class HomeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
+      buildWhen: (previous , current)=>
+      previous.homeSlidersState != current.homeSlidersState,
       builder: (context, state) {
+
         switch (state.homeSlidersState) {
           case RequestState.loading:
-            print('build');
             return SizedBox(
               height: 200,
               child: Center(child: CircularProgressIndicator()),

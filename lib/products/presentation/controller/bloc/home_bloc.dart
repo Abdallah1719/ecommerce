@@ -50,14 +50,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<GetProductsTopRatedEvent>((event, emit) async {
-      print('🔔 Event Started');
-      try {
-        final result = await getProductsTopRatedUseCase.execute();
-        print('🔵 UseCase Result: $result');
 
+        final result = await getProductsTopRatedUseCase.execute();
         result.fold(
           (failure) {
-            print('❌ Bloc Error: ${failure.message}');
             emit(
               state.copyWith(
                 productsTopRatedState: RequestState.error,
@@ -66,7 +62,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             );
           },
           (products) {
-            print('✅ Bloc Success: ${products.length} products loaded');
             emit(
               state.copyWith(
                 productsTopRatedState: RequestState.loaded,
@@ -75,10 +70,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             );
           },
         );
-      } catch (e, stack) {
-        print('🔥 Critical Error: $e');
-        print(stack);
-      }
     });
   }
 }

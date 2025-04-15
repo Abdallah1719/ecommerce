@@ -1,31 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class GlobalAppbar extends StatelessWidget implements PreferredSizeWidget {
-//   const GlobalAppbar({super.key, this.height = kToolbarHeight});
-//   final double height;
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       height: height,
-//       child: AppBar(
-//         title: Text("data"),
-//         actions: [
-//           TextField(
-//             decoration: InputDecoration(
-//               border: OutlineInputBorder(
-//                 borderSide: BorderSide(color: Colors.black),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-
-//   @override
-//   // TODO: implement preferredSize
-//   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-// }
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -40,11 +12,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
         decoration: BoxDecoration(
           color: Colors.blue,
           boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 4,
-              offset: Offset(0, 2),
-            ),
+            BoxShadow(color: Colors.black, blurRadius: 4, offset: Offset(0, 2)),
           ],
         ),
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
@@ -72,6 +40,5 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(110);
 }
