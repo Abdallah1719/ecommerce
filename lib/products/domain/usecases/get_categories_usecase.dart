@@ -6,7 +6,7 @@ import 'package:ecommerce_app/products/domain/repository/base_products_repositor
 class GetCategoriesUseCase {
   final BaseProductsRepository baseProductsRepo;
 
-  GetCategoriesUseCase({required this.baseProductsRepo});
+  GetCategoriesUseCase(this.baseProductsRepo);
 
   Future<Either<Failure, List<Categories>>> execute() async {
     return await baseProductsRepo.getCategories();

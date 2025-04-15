@@ -6,7 +6,7 @@ import 'package:ecommerce_app/products/domain/repository/base_products_repositor
 class GetProductsTopRatedUseCase {
   final BaseProductsRepository baseProductsRepo;
 
-  GetProductsTopRatedUseCase({required this.baseProductsRepo});
+  GetProductsTopRatedUseCase(this.baseProductsRepo);
 
   Future<Either<Failure, List<ProductsTopRated>>> execute() async {
     return await baseProductsRepo.getProductsTopRated();

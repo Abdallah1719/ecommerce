@@ -42,6 +42,10 @@ dependencies:
   shared_preferences: ^2.5.3
   flutter_bloc: ^9.1.0
   get_it: ^8.0.3
+  carousel_slider: ^5.0.0
+  cached_network_image: ^3.4.1
+  flutter_animate: ^4.1.1
+  animate_do: ^4.2.0
 
 dev_dependencies:
   flutter_test:

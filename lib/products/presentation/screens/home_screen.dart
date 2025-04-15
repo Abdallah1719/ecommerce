@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/core/global/global-widgets/global_appbar.dart';
 import 'package:ecommerce_app/core/services/service_locator.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
-import 'package:ecommerce_app/products/domain/usecases/get_home_sliders_usecase.dart';
 import 'package:ecommerce_app/products/presentation/components/categories_listview.dart';
 import 'package:ecommerce_app/products/presentation/components/home_slider.dart';
 import 'package:ecommerce_app/products/presentation/components/home_titles.dart';
@@ -16,7 +15,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<HomeBloc>()..add(GetHomeSliderEvent()),
+      create:
+          (context) =>
+              sl<HomeBloc>()
+                ..add(GetHomeSliderEvent())
+                ..add(GetCategoriesEvent()),
 
       child: Scaffold(
         appBar: GlobalAppBar(),

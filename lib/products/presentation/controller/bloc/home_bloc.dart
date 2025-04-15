@@ -1,6 +1,9 @@
 import 'package:ecommerce_app/core/utils/enums.dart';
+import 'package:ecommerce_app/products/domain/entities/categories.dart';
 import 'package:ecommerce_app/products/domain/entities/home_sliders.dart';
+import 'package:ecommerce_app/products/domain/usecases/get_categories_usecase.dart';
 import 'package:ecommerce_app/products/domain/usecases/get_home_sliders_usecase.dart';
+import 'package:ecommerce_app/products/domain/usecases/get_products_top_rated__usecase.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,19 +12,38 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetHomeSlidersUseCase getHomeSlidersUseCase;
-  HomeBloc(this.getHomeSlidersUseCase) : super(HomeState()) {
-    on<HomeEvent>((event, emit) async {
+  final GetCategoriesUseCase getCategoriesUseCase;
+  final GetProductsTopRatedUseCase getProductsTopRated;
+  HomeBloc(
+    this.getHomeSlidersUseCase,
+    this.getCategoriesUseCase,
+    this.getProductsTopRated,
+  ) : super(HomeState()) {
+    on<GetHomeSliderEvent>((event, emit) async {
       final result = await getHomeSlidersUseCase.execute();
-      emit(HomeState(homeSlidersState: RequestState.loading));
       result.fold(
         (l) => emit(
-          HomeState(
+          state.copyWith(
             homeSlidersState: RequestState.error,
             homeSlidersMessage: l.message,
           ),
         ),
         (r) => emit(
-          (HomeState(homeSlidersState: RequestState.loaded, homeSliders: r)),
+          state.copyWith(homeSlidersState: RequestState.loaded, homeSliders: r),
+        ),
+      );
+    });
+    on<GetCategoriesEvent>((event, emit) async {
+      final result = await getCategoriesUseCase.execute();
+      result.fold(
+        (l) => emit(
+          state.copyWith(
+            categoriesState: RequestState.error,
+            categoriesMessage: l.message,
+          ),
+        ),
+        (r) => emit(
+          state.copyWith(categoriesState: RequestState.loaded, categories: r),
         ),
       );
     });

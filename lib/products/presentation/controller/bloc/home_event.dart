@@ -9,6 +9,6 @@ sealed class HomeEvent extends Equatable {
 
 class GetHomeSliderEvent extends HomeEvent {}
 
-class GetCategories extends HomeEvent {}
+class GetCategoriesEvent extends HomeEvent {}
 
-class GetProductsTopRated extends HomeEvent {}
+class GetProductsTopRatedEvent extends HomeEvent {}
