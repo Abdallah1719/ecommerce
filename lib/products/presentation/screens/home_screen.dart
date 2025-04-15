@@ -19,7 +19,8 @@ class HomeScreen extends StatelessWidget {
           (context) =>
               sl<HomeBloc>()
                 ..add(GetHomeSliderEvent())
-                ..add(GetCategoriesEvent()),
+                ..add(GetCategoriesEvent())
+                ..add(GetProductsTopRatedEvent()),
 
       child: Scaffold(
         appBar: GlobalAppBar(),

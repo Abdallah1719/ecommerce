@@ -46,9 +46,12 @@ class ProductsDataSource extends BaseProductsDataSource {
   @override
   Future<List<ProductsTopRatedModel>> getProductsTopRated() async {
     final response = await Dio().get(ApiConstances.productsTopRatedPath);
+    print(
+      'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr{$response}',
+    );
     if (response.statusCode == 200) {
       return List<ProductsTopRatedModel>.from(
-        (response.data["data"] as List).map(
+        (response.data["data"]["data"] as List).map(
           (e) => ProductsTopRatedModel.fromJson(e),
         ),
       );

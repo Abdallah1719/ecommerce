@@ -4,7 +4,7 @@ class ProductsTopRated extends Equatable {
   final int id;
   final String title;
   final int rate;
-  final double discount;
+  final int discount;
   final int priceBeforeDiscount;
   final String image;
   final int price;
