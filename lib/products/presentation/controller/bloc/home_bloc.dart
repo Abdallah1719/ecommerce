@@ -21,7 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this.getProductsTopRatedUseCase,
   ) : super(HomeState()) {
     on<GetHomeSliderEvent>((event, emit) async {
-      final result = await getHomeSlidersUseCase.execute();
+      final result = await getHomeSlidersUseCase();
       result.fold(
         (l) => emit(
           state.copyWith(
@@ -35,7 +35,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       );
     });
     on<GetCategoriesEvent>((event, emit) async {
-      final result = await getCategoriesUseCase.execute();
+      final result = await getCategoriesUseCase();
       result.fold(
         (l) => emit(
           state.copyWith(
@@ -50,26 +50,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<GetProductsTopRatedEvent>((event, emit) async {
-
-        final result = await getProductsTopRatedUseCase.execute();
-        result.fold(
-          (failure) {
-            emit(
-              state.copyWith(
-                productsTopRatedState: RequestState.error,
-                productsTopRatedMessage: failure.message,
-              ),
-            );
-          },
-          (products) {
-            emit(
-              state.copyWith(
-                productsTopRatedState: RequestState.loaded,
-                productsTopRated: products,
-              ),
-            );
-          },
-        );
+      final result = await getProductsTopRatedUseCase();
+      result.fold(
+        (failure) {
+          emit(
+            state.copyWith(
+              productsTopRatedState: RequestState.error,
+              productsTopRatedMessage: failure.message,
+            ),
+          );
+        },
+        (products) {
+          emit(
+            state.copyWith(
+              productsTopRatedState: RequestState.loaded,
+              productsTopRated: products,
+            ),
+          );
+        },
+      );
     });
   }
 }

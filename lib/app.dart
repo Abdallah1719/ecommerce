@@ -30,7 +30,7 @@ class App extends StatelessWidget {
                   duration: Duration(seconds: 2),
                   curve: Curves.decelerate,
                 ),
-                initialRoute: '/',
+                initialRoute: '/login',
                 routes: AppRoutes.routes,
               );
             },
