@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:ecommerce_app/core/utils/enums.dart';
 import 'package:ecommerce_app/products/presentation/controller/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,10 @@ class HomeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-      buildWhen: (previous , current)=>
-      previous.homeSlidersState != current.homeSlidersState,
+      buildWhen:
+          (previous, current) =>
+              previous.homeSlidersState != current.homeSlidersState,
       builder: (context, state) {
-
         switch (state.homeSlidersState) {
           case RequestState.loading:
             return SizedBox(

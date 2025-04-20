@@ -30,8 +30,9 @@ class App extends StatelessWidget {
                   duration: Duration(seconds: 2),
                   curve: Curves.decelerate,
                 ),
-                initialRoute: '/login',
-                routes: AppRoutes.routes,
+
+                onGenerateRoute: RouteGenerator.getRoute,
+                initialRoute: AppRoutes.splashRoute,
               );
             },
           );
