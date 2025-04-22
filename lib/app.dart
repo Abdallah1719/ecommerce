@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/core/global/routes/routes.dart';
-import 'package:ecommerce_app/core/global/theme/cubit/theme_cubit.dart';
+import 'package:ecommerce_app/core/common/routes/routes.dart';
+import 'package:ecommerce_app/core/common/theme/cubit/theme_cubit.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/l10n/cubit/local_cubit.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class App extends StatelessWidget {
                 ),
 
                 onGenerateRoute: RouteGenerator.getRoute,
-                initialRoute: AppRoutes.splashRoute,
+                initialRoute: AppRoutes.loginRoute,
               );
             },
           );
