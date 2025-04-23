@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/resources/app_images.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/primary_button.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // اللوجو
-                Image.asset('assets/logo.png', height: 100),
+                Image.asset(ImageAssets.splashLogo, height: 100),
 
                 const SizedBox(height: 32),
 

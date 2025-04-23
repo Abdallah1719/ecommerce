@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/primary_button.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/secondary_button.dart';
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // اللوجو
-                    Image.asset('assets/omda_logo.png', height: 100),
+                    Image.asset('assets/images/omda_logo.png', height: 100),
 
                     const SizedBox(height: 32),
 
@@ -111,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                     SecondaryButton(
                       text: "Don't have an account? Register",
                       onPressed: () {
-                        Navigator.pushNamed(context, '/register');
+                        Navigator.pushNamed(context, AppRoutes.registerRoute);
                       },
                     ),
                   ],
