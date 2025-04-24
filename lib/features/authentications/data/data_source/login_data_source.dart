@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:ecommerce_app/core/utils/api/error/exception.dart';
+import 'package:ecommerce_app/core/utils/error/exception.dart';
 import 'package:ecommerce_app/core/utils/api/api_constances.dart';
-import 'package:ecommerce_app/core/utils/api/error/error_message_model.dart';
+import 'package:ecommerce_app/core/utils/error/error_message_model.dart';
 import 'package:ecommerce_app/core/utils/api/network_helper.dart';
 import 'package:ecommerce_app/features/authentications/data/models/login_model.dart';
 

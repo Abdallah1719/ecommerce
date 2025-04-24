@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_app/core/utils/api/error/exception.dart';
-import 'package:ecommerce_app/core/utils/api/error/failure.dart';
+import 'package:ecommerce_app/core/utils/error/exception.dart';
+import 'package:ecommerce_app/core/utils/error/failure.dart';
 import 'package:ecommerce_app/features/products/data/data_source/remote_data_source/products_data_source.dart';
 import 'package:ecommerce_app/features/products/domain/entities/categories.dart';
 import 'package:ecommerce_app/features/products/domain/entities/home_sliders.dart';
