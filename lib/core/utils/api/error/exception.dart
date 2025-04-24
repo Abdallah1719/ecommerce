@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/core/network/error_message_model.dart';
+import 'package:ecommerce_app/core/utils/api/error/error_message_model.dart';
 
 class ServerException implements Exception {
   final ErrorMessageModel errorMessageModel;

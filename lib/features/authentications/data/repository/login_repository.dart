@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_app/core/error/exception.dart';
-import 'package:ecommerce_app/core/error/failure.dart';
+import 'package:ecommerce_app/core/utils/api/error/exception.dart';
+import 'package:ecommerce_app/core/utils/api/error/failure.dart';
 import 'package:ecommerce_app/features/authentications/data/data_source/login_data_source.dart';
 import 'package:ecommerce_app/features/authentications/domain/entities/login.dart';
 import 'package:ecommerce_app/features/authentications/domain/repository/base_login_repository.dart';

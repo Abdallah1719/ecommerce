@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce_app/core/error/failure.dart';
 
 import 'package:ecommerce_app/core/utils/enums.dart';
 import 'package:ecommerce_app/features/authentications/data/repository/login_repository.dart';

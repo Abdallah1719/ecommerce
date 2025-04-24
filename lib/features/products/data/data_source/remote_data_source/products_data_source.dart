@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce_app/core/error/exception.dart';
-import 'package:ecommerce_app/core/network/api_constances.dart';
-import 'package:ecommerce_app/core/network/error_message_model.dart';
+import 'package:ecommerce_app/core/utils/api/error/exception.dart';
+import 'package:ecommerce_app/core/utils/api/api_constances.dart';
+import 'package:ecommerce_app/core/utils/api/error/error_message_model.dart';
 import 'package:ecommerce_app/features/products/data/models/categories_model.dart';
 import 'package:ecommerce_app/features/products/data/models/home_sliders_model.dart';
 import 'package:ecommerce_app/features/products/data/models/products_top_rated_model.dart';

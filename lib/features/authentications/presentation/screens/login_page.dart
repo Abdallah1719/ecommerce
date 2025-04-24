@@ -1,7 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/core/common/services/service_locator.dart';
-import 'package:ecommerce_app/core/network/network_helper.dart';
 import 'package:ecommerce_app/features/authentications/data/data_source/login_data_source.dart';
 import 'package:ecommerce_app/features/authentications/data/repository/login_repository.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
