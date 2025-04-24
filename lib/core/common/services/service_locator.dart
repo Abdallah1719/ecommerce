@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'package:ecommerce_app/core/network/network_helper.dart';
 import 'package:ecommerce_app/features/products/data/data_source/remote_data_source/products_data_source.dart';
 import 'package:ecommerce_app/features/products/data/repository/products_repository.dart';
 import 'package:ecommerce_app/features/products/domain/repository/base_products_repository.dart';
@@ -26,5 +28,8 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GetHomeSlidersUseCase(sl()));
     sl.registerLazySingleton(() => GetCategoriesUseCase(sl()));
     sl.registerLazySingleton(() => GetProductsTopRatedUseCase(sl()));
+
+    // Dio
+    sl.registerLazySingleton(() => NetworkHelper(Dio()));
   }
 }

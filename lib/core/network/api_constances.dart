@@ -3,5 +3,5 @@ class ApiConstances {
   static const homeSliderPath = '$baseUrl/homeSliders';
   static const categoriesPath = '$baseUrl/categories?show_sub=1';
   static const productsTopRatedPath = '$baseUrl/products/topRated';
-  static const loginPath = '$baseUrl/auth/login?lang=ar';
+  static const loginPath = '$baseUrl/auth/login';
 }
