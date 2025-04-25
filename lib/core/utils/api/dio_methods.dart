@@ -1,21 +1,36 @@
 import 'package:dio/dio.dart';
+import 'package:ecommerce_app/core/utils/api/api_constances.dart';
 import 'package:ecommerce_app/core/utils/api/api_methods.dart';
 import 'package:ecommerce_app/core/utils/error/exception.dart';
 
 class DioMethods extends ApiMethods {
   final Dio dio;
 
-  DioMethods({required this.dio});
+  DioMethods({required this.dio}) {
+    dio.options.baseUrl = ApiConstances.baseUrl;
+    dio.interceptors.add(Interceptor());
+    dio.interceptors.add(
+      LogInterceptor(
+        request: true,
+        requestHeader: true,
+        requestBody: true,
+        responseHeader: true,
+        responseBody: true,
+        error: true,
+      ),
+    );
+  }
   @override
   Future delete(
     String path, {
-    Object? data,
+    dynamic data,
     Map<String, dynamic>? queryParameters,
+    isFormData = false,
   }) async {
     try {
       final response = await dio.delete(
         path,
-        data: data,
+        data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;
@@ -27,13 +42,14 @@ class DioMethods extends ApiMethods {
   @override
   Future get(
     String path, {
-    Object? data,
+    dynamic data,
     Map<String, dynamic>? queryParameters,
+    isFormData = false,
   }) async {
     try {
       final response = await dio.delete(
         path,
-        data: data,
+        data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;
@@ -45,13 +61,14 @@ class DioMethods extends ApiMethods {
   @override
   Future patch(
     String path, {
-    Object? data,
+    dynamic data,
     Map<String, dynamic>? queryParameters,
+    isFormData = false,
   }) async {
     try {
       final response = await dio.delete(
         path,
-        data: data,
+        data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;
@@ -63,13 +80,14 @@ class DioMethods extends ApiMethods {
   @override
   Future post(
     String path, {
-    Object? data,
+    dynamic data,
     Map<String, dynamic>? queryParameters,
+    isFormData = false,
   }) async {
     try {
       final response = await dio.delete(
         path,
-        data: data,
+        data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;
