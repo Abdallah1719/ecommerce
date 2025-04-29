@@ -1,7 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:ecommerce_app/core/common/routes/routes.dart';
-import 'package:ecommerce_app/core/common/services/service_locator.dart';
-import 'package:ecommerce_app/features/authentications/data/data_source/login_data_source.dart';
-import 'package:ecommerce_app/features/authentications/data/repository/login_repository.dart';
+import 'package:ecommerce_app/core/utils/api/dio_methods.dart';
+import 'package:ecommerce_app/core/utils/resources/app_images.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/primary_button.dart';
 import 'package:ecommerce_app/features/authentications/presentation/components/secondary_button.dart';
@@ -23,10 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create:
-          (context) => LoginCubit(
-            LoginRepository(baseLoginDataSource: LoginDataSource(sl())),
-          ),
+      create: (context) => LoginCubit(DioMethods(dio: Dio())),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {},
         builder: (context, state) {
@@ -45,10 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               // اللوجو
-                              Image.asset(
-                                'assets/images/omda_logo.png',
-                                height: 100,
-                              ),
+                              Image.asset(AppImages.splashLogo, height: 100),
 
                               const SizedBox(height: 32),
 
@@ -112,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                               PrimaryButton(
                                 text: 'LOGIN',
                                 onPressed: () {
-                                  c.loginValidate();
+                                  c.loginUser();
                                   // if (c.formKey.currentState!.validate()) {
                                   //   c.formKey.currentState!.save();
                                   //   // إضافة منطق التسجيل هنا

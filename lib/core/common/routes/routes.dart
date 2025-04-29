@@ -1,11 +1,12 @@
+import 'package:ecommerce_app/core/utils/resources/app_strings.dart';
 import 'package:ecommerce_app/features/authentications/presentation/screens/login_page.dart';
 import 'package:ecommerce_app/features/authentications/presentation/screens/register_page.dart';
-import 'package:ecommerce_app/core/utils/resources/app_strings.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/home_screen.dart';
+import 'package:ecommerce_app/features/splash_screen/persentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
-  static const splashRoute = '/';
+  static const splashRoute = '/splash';
   static const loginRoute = '/login';
   static const registerRoute = '/register';
   static const forgetPasswordRoute = '/forgetPassword';
@@ -20,6 +21,8 @@ class AppRoutes {
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
+      case AppRoutes.splashRoute:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       case AppRoutes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case AppRoutes.registerRoute:

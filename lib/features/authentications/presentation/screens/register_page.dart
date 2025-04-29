@@ -28,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // اللوجو
-                Image.asset(ImageAssets.splashLogo, height: 100),
+                Image.asset(AppImages.splashLogo, height: 100),
 
                 const SizedBox(height: 32),
 

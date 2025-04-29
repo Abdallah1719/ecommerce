@@ -32,7 +32,7 @@ class App extends StatelessWidget {
                 ),
 
                 onGenerateRoute: RouteGenerator.getRoute,
-                initialRoute: AppRoutes.loginRoute,
+                initialRoute: AppRoutes.splashRoute,
               );
             },
           );

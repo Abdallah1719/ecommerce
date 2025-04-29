@@ -1,3 +1,4 @@
 class AppStrings {
-  static String noRouteFound = ' No Route Found';
+  static String noRouteFound = 'No Route Found';
+  
 }
