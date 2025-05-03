@@ -36,7 +36,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
     );
     fadingAnimation = Tween<double>(
       begin: .2,
-      end: 1,
+      end: 1.2,
     ).animate(animationController!);
 
     animationController?.repeat(reverse: true);
@@ -56,18 +56,18 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(),
           FadeTransition(
             opacity: fadingAnimation!,
-            child: Text(
-              'Splach Text',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 51,
-                fontWeight: FontWeight.bold,
-                color: Color(0xffffffff),
-              ),
-            ),
+            child: Image.asset('assets/images/splash_logo.png'),
+            //  Text(
+            //   'Splach Text',
+            //   style: TextStyle(
+            //     fontFamily: 'Poppins',
+            //     fontSize: 51,
+            //     fontWeight: FontWeight.bold,
+            //     color: Color(0xffffffff),
+            //   ),
+            // ),
           ),
         ],
       ),

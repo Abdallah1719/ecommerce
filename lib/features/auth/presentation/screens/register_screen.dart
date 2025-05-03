@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/core/utils/resources/app_images.dart';
-import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
-import 'package:ecommerce_app/features/authentications/presentation/components/primary_button.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/custom_text_field.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -70,10 +70,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      // هنا يتم إرسال الكود إلى رقم الهاتف
-                      print('Phone Number: $_phoneNumber');
-                      // الانتقال إلى صفحة التحقق من الكود
-                      // Navigator.pushNamed(context, '/verify');
                     }
                   },
                 ),

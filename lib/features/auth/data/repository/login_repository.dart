@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/utils/error/exception.dart';
 import 'package:ecommerce_app/core/utils/error/failure.dart';
-import 'package:ecommerce_app/features/authentications/data/data_source/login_data_source.dart';
-import 'package:ecommerce_app/features/authentications/domain/entities/login.dart';
-import 'package:ecommerce_app/features/authentications/domain/repository/base_login_repository.dart';
+import 'package:ecommerce_app/features/auth/data/data_source/login_data_source.dart';
+import 'package:ecommerce_app/features/auth/domain/entities/login.dart';
+import 'package:ecommerce_app/features/auth/domain/repository/base_login_repository.dart';
 
 class LoginRepository implements BaseLoginRepository {
   final BaseLoginDataSource baseLoginDataSource;

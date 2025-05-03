@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/utils/resources/size_config.dart';
-import 'package:ecommerce_app/features/authentications/presentation/screens/login_page.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:ecommerce_app/features/on_boarding/persentation/widgets/custom_buttons.dart';
 import 'package:ecommerce_app/features/on_boarding/persentation/widgets/custom_indicator.dart';
 import 'package:ecommerce_app/features/on_boarding/persentation/widgets/custom_page_view.dart';

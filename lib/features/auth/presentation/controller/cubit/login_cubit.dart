@@ -2,7 +2,7 @@ import 'package:ecommerce_app/core/utils/api/api_constances.dart';
 import 'package:ecommerce_app/core/utils/api/api_methods.dart';
 
 import 'package:ecommerce_app/core/utils/error/exception.dart';
-import 'package:ecommerce_app/features/authentications/data/models/login_model.dart';
+import 'package:ecommerce_app/features/auth/data/models/login_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +29,7 @@ class LoginCubit extends Cubit<LoginState> {
       );
       user = LoginModel.fromJson(response);
       final decodedToken = JwtDecoder.decode(user!.token);
-      print(decodedToken['prv']);
+
       emit(Loginsucess());
     } on ServerException catch (e) {
       emit(Loginfailure(errorMassage: e.errorMessageModel.statusMessage));

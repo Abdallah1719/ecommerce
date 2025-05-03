@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/core/utils/resources/app_strings.dart';
-import 'package:ecommerce_app/features/authentications/presentation/screens/login_page.dart';
-import 'package:ecommerce_app/features/authentications/presentation/screens/register_page.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/home_screen.dart';
 import 'package:ecommerce_app/features/splash_screen/persentation/splash_screen.dart';
 import 'package:flutter/material.dart';

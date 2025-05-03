@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/core/utils/api/dio_methods.dart';
 import 'package:ecommerce_app/core/utils/resources/app_images.dart';
-import 'package:ecommerce_app/features/authentications/presentation/components/custom_text_field.dart';
-import 'package:ecommerce_app/features/authentications/presentation/components/primary_button.dart';
-import 'package:ecommerce_app/features/authentications/presentation/components/secondary_button.dart';
-import 'package:ecommerce_app/features/authentications/presentation/controller/cubit/login_cubit.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/custom_text_field.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/secondary_button.dart';
+import 'package:ecommerce_app/features/auth/presentation/controller/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

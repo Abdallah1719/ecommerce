@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/common/widgets/global_appbar.dart';
-import 'package:ecommerce_app/core/common/services/service_locator.dart';
+import 'package:ecommerce_app/core/utils/services/service_locator.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/features/products/presentation/components/categories_listview.dart';
 import 'package:ecommerce_app/features/products/presentation/components/home_slider.dart';
