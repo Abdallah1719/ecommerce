@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/utils/resources/app_images.dart';
-import 'package:ecommerce_app/features/auth/presentation/components/custom_text_field.dart';
+import 'package:ecommerce_app/core/common/widgets/custom_text_field.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/custom_app_bar.dart';
 import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -27,14 +29,8 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // اللوجو
-                Image.asset(AppImages.splashLogo, height: 100),
-
-                const SizedBox(height: 32),
-
-                // عنوان الصفحة
                 const Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     'Verify Phone Number',
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),

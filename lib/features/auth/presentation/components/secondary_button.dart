@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/resources/index.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -12,6 +13,20 @@ class SecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: onPressed, child: Text(text));
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: R.colors.lightgreen1,
+      ),
+
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          style: TextStyle(color: R.colors.darkgreen, fontSize: R.fontSize.s18),
+        ),
+      ),
+    );
   }
 }

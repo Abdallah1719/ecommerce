@@ -2,10 +2,14 @@ import 'package:dio/dio.dart';
 import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/core/utils/api/dio_methods.dart';
 import 'package:ecommerce_app/core/utils/resources/app_images.dart';
-import 'package:ecommerce_app/features/auth/presentation/components/custom_text_field.dart';
+import 'package:ecommerce_app/core/utils/resources/index.dart';
+import 'package:ecommerce_app/core/utils/resources/size_config.dart';
+import 'package:ecommerce_app/core/common/widgets/custom_text_field.dart';
+import 'package:ecommerce_app/features/auth/presentation/components/custom_app_bar.dart';
 import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
 import 'package:ecommerce_app/features/auth/presentation/components/secondary_button.dart';
 import 'package:ecommerce_app/features/auth/presentation/controller/cubit/login_cubit.dart';
+import 'package:ecommerce_app/l10n/cubit/local_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +35,8 @@ class _LoginPageState extends State<LoginPage> {
             builder: (context, state) {
               var c = context.read<LoginCubit>();
               return Scaffold(
+                backgroundColor: R.colors.white,
+                appBar: CustomAppBar(),
                 body: SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(24.0),
@@ -47,14 +53,15 @@ class _LoginPageState extends State<LoginPage> {
                               const SizedBox(height: 32),
 
                               // عنوان الصفحة
-                              const Align(
-                                alignment: Alignment.centerLeft,
+                              Align(
+                                alignment:
+                                    LocaleCubit.isArabic()
+                                        ? Alignment.centerRight
+                                        : Alignment.centerLeft,
                                 child: Text(
                                   'Login',
-                                  style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style:
+                                      Theme.of(context).textTheme.headlineLarge,
                                 ),
                               ),
 
@@ -96,7 +103,10 @@ class _LoginPageState extends State<LoginPage> {
                                   onPressed: () {
                                     /* إضافة منطق النسيان */
                                   },
-                                  child: const Text('Forget Password?'),
+                                  child: Text(
+                                    'Forget Password?',
+                                    style: TextStyle(color: R.colors.darkgreen),
+                                  ),
                                 ),
                               ),
 
