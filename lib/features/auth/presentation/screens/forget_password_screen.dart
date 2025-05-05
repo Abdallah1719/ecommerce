@@ -4,14 +4,14 @@ import 'package:ecommerce_app/features/auth/presentation/components/custom_app_b
 import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class ForgetPasswordScreen extends StatefulWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<ForgetPasswordScreen> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<ForgetPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
 
@@ -32,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    'Verify Phone Number',
+                    'Forget Password',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),

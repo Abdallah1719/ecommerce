@@ -3,7 +3,6 @@ import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/core/utils/api/dio_methods.dart';
 import 'package:ecommerce_app/core/utils/resources/app_images.dart';
 import 'package:ecommerce_app/core/utils/resources/index.dart';
-import 'package:ecommerce_app/core/utils/resources/size_config.dart';
 import 'package:ecommerce_app/core/common/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/features/auth/presentation/components/custom_app_bar.dart';
 import 'package:ecommerce_app/features/auth/presentation/components/primary_button.dart';
@@ -101,7 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                                 alignment: Alignment.centerRight,
                                 child: TextButton(
                                   onPressed: () {
-                                    /* إضافة منطق النسيان */
+                                    Navigator.pushNamed(
+                                      context,
+                                      AppRoutes.forgetPasswordRoute,
+                                    );
                                   },
                                   child: Text(
                                     'Forget Password?',
@@ -112,23 +114,19 @@ class _LoginPageState extends State<LoginPage> {
 
                               const SizedBox(height: 16),
 
-                              // زر التسجيل
                               PrimaryButton(
                                 text: 'LOGIN',
                                 onPressed: () {
                                   c.loginUser();
-                                  // if (c.formKey.currentState!.validate()) {
-                                  //   c.formKey.currentState!.save();
-                                  //   // إضافة منطق التسجيل هنا
-                                  //   print('Email: $_email');
-                                  //   print('Password: $_password');
-                                  // }
+                                  Navigator.pushNamed(
+                                    context,
+                                    AppRoutes.homeScreenRoute,
+                                  );
                                 },
                               ),
 
                               const SizedBox(height: 16),
 
-                              // زر إنشاء حساب
                               SecondaryButton(
                                 text: "Don't have an account? Register",
                                 onPressed: () {

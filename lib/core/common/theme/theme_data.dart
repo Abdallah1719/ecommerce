@@ -5,6 +5,7 @@ class AppTheme {
   static final ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
     fontFamily: 'Poppins',
+    scaffoldBackgroundColor: R.colors.white,
     appBarTheme: AppBarTheme(
       backgroundColor: R.colors.white,
       iconTheme: IconThemeData(color: R.colors.darkgreen),
@@ -19,7 +20,11 @@ class AppTheme {
         fontWeight: FontWeight.w600,
         color: R.colors.darkgreen,
       ),
-      headlineMedium: TextStyle(fontSize: R.fontSize.s22),
+      headlineMedium: TextStyle(
+        fontSize: R.fontSize.s22,
+        color: R.colors.grey,
+        fontWeight: FontWeight.bold,
+      ),
       headlineSmall: TextStyle(fontSize: R.fontSize.s20),
       bodyLarge: TextStyle(fontSize: R.fontSize.s16),
       bodyMedium: TextStyle(
