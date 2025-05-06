@@ -11,62 +11,63 @@ class CategoriesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-      buildWhen: (previous , current)=>
-      previous.categoriesState != current.categoriesState,
+      buildWhen:
+          (previous, current) =>
+              previous.categoriesState != current.categoriesState,
       builder: (context, state) {
-     switch(state.categoriesState){
-       case RequestState.loading:
-         return SizedBox(
-           height: 200,
-           child: Center(child: CircularProgressIndicator()),
-         );
-       case RequestState.loaded:
-         return SizedBox(
-           height: 200,
-           child:
-           //  FadeIn(
-           //   duration: const Duration(milliseconds: 500),
-           CarouselSlider(
-             options: CarouselOptions(
-               height: 200.0,
-               viewportFraction: 0.3,
-               enableInfiniteScroll: false,
-               padEnds: false,
-               onPageChanged: (index, reason) {},
-             ),
-             items:
-             state.categories.map((item) {
-               return Column(
-                 mainAxisSize: MainAxisSize.min,
-                 children: [
-                   ClipOval(
-                     child: CachedNetworkImage(
-                       imageUrl: item.icon,
-                       width: 100,
-                       height: 100,
-                       // ApiConstance.imageUrl(item.backdropPath!),
-                       fit: BoxFit.cover,
-                     ),
-                   ),
-                   SizedBox(height: 8),
+        switch (state.categoriesState) {
+          case RequestState.loading:
+            return SizedBox(
+              height: 200,
+              child: Center(child: CircularProgressIndicator()),
+            );
+          case RequestState.loaded:
+            return SizedBox(
+              height: 200,
+              child:
+              //  FadeIn(
+              //   duration: const Duration(milliseconds: 500),
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 200.0,
+                  viewportFraction: 0.3,
+                  enableInfiniteScroll: false,
+                  padEnds: false,
+                  onPageChanged: (index, reason) {},
+                ),
+                items:
+                    state.categories.map((item) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ClipOval(
+                            child: CachedNetworkImage(
+                              imageUrl: item.icon,
+                              width: 100,
+                              height: 100,
+                              // ApiConstance.imageUrl(item.backdropPath!),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(height: 8),
 
-                   Text(
-                     item.name,
-                     style: TextStyle(fontSize: 16),
-                     textAlign: TextAlign.center,
-                   ),
-                 ],
-               );
-             }).toList(),
-           ),
-         );
-       case RequestState.error:
-         return SizedBox(
-           height: 200,
-           child: Center(child: Text(state.categoriesMessage)),
-         );
-     }
-
+                          Text(
+                            item.name,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.bodyLarge,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      );
+                    }).toList(),
+              ),
+            );
+          case RequestState.error:
+            return SizedBox(
+              height: 200,
+              child: Center(child: Text(state.categoriesMessage)),
+            );
+        }
       },
     );
   }

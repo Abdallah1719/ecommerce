@@ -36,12 +36,15 @@ class HomeSlider extends StatelessWidget {
                   state.homeSliders.map((item) {
                     return Padding(
                       padding: const EdgeInsets.only(right: 10),
-                      child: CachedNetworkImage(
-                        height: 200,
-                        width: 300,
-                        imageUrl: item.image,
-                        // ApiConstance.imageUrl(item.backdropPath!),
-                        fit: BoxFit.cover,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: CachedNetworkImage(
+                          width: 300,
+                          height: 174.0,
+                          imageUrl: item.image,
+
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   }).toList(),

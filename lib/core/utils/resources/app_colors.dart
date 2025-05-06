@@ -10,4 +10,6 @@ class AppColors {
   final Color darkgreen = Color(0xff378E69);
   final Color error = Color.fromARGB(255, 230, 10, 10);
   final Color white = Color(0xffffffff);
+  final Color black = Color.fromARGB(255, 0, 0, 0);
+  final Color? darkgrey = Colors.grey[800];
 }

@@ -25,8 +25,16 @@ class AppTheme {
         color: R.colors.grey,
         fontWeight: FontWeight.bold,
       ),
-      headlineSmall: TextStyle(fontSize: R.fontSize.s20),
-      bodyLarge: TextStyle(fontSize: R.fontSize.s16),
+      headlineSmall: TextStyle(
+        fontSize: R.fontSize.s18,
+        color: R.colors.black,
+        fontWeight: FontWeight.w600,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: R.fontSize.s16,
+        color: R.colors.darkgrey,
+        fontWeight: FontWeight.bold,
+      ),
       bodyMedium: TextStyle(
         fontSize: R.fontSize.s14,
         fontWeight: FontWeight.bold,

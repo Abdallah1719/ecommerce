@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
-        "categoriess": MessageLookupByLibrary.simpleMessage("Categoriess"),
+        "categoriess": MessageLookupByLibrary.simpleMessage("Categories"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "popularProducts":
             MessageLookupByLibrary.simpleMessage("Popular Products"),
