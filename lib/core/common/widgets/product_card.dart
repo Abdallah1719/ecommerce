@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_app/core/utils/resources/size_config.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/features/products/domain/entities/products_top_rated.dart';
 import 'package:flutter/material.dart';
-
 
 class ProductCard extends StatelessWidget {
   final ProductsTopRated product;
@@ -68,20 +68,24 @@ class ProductCard extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        product.title,
-                        style: TextStyle(
-                          fontSize: 8,
-                          fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: SizeConfig.defaultSize! * 12,
+                        child: Text(
+                          product.title,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
                         ),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
                       ),
-                      Spacer(flex: 1),
+
                       Text(
                         '${product.price.toString()} L.E',
-                        style: TextStyle(fontSize: 8, color: Colors.black),
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
                     ],
                   ),
@@ -91,7 +95,7 @@ class ProductCard extends StatelessWidget {
                     children: [
                       Text(
                         product.weight,
-                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
                       SizedBox(width: 4), // مسافة صغيرة بين النصوص
                       Text(
