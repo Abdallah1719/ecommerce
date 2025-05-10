@@ -4,7 +4,7 @@ import 'package:ecommerce_app/features/auth/presentation/screens/forget_password
 import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:ecommerce_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/controller/bloc/home_bloc.dart';
-import 'package:ecommerce_app/features/products/presentation/screens/categories_details_screen.dart';
+import 'package:ecommerce_app/features/products/presentation/screens/categories_products_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/categories_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/home_screen.dart';
 import 'package:ecommerce_app/features/splash_screen/persentation/splash_screen.dart';
@@ -68,7 +68,7 @@ class RouteGenerator {
             builder:
                 (_) => BlocProvider.value(
                   value: homeBloc,
-                  child: const CategoriesDetailsScreen(),
+                  child: const CategoriesProductsScreen(),
                 ),
           );
         }

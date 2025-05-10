@@ -34,7 +34,7 @@ class ProductGridView extends StatelessWidget {
                 ),
                 itemCount: state.productsTopRated.length,
                 itemBuilder: (context, index) {
-                  return ProductCard(product: state.productsTopRated[index]);
+                  return ProductCard(state.productsTopRated[index]);
                 },
               ),
             );

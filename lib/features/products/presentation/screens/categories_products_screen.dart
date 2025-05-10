@@ -2,8 +2,8 @@ import 'package:ecommerce_app/features/products/presentation/components/categori
 import 'package:ecommerce_app/features/products/presentation/components/products_gridview.dart';
 import 'package:flutter/material.dart';
 
-class CategoriesDetailsScreen extends StatelessWidget {
-  const CategoriesDetailsScreen({super.key});
+class CategoriesProductsScreen extends StatelessWidget {
+  const CategoriesProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
