@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_app/core/common/routes/routes.dart';
 import 'package:ecommerce_app/core/utils/enums.dart';
 import 'package:ecommerce_app/features/products/presentation/controller/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
@@ -37,27 +38,37 @@ class CategoriesListView extends StatelessWidget {
                 ),
                 items:
                     state.categories.map((item) {
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          ClipOval(
-                            child: CachedNetworkImage(
-                              imageUrl: item.icon,
-                              width: 100,
-                              height: 100,
-                              // ApiConstance.imageUrl(item.backdropPath!),
-                              fit: BoxFit.cover,
+                      return GestureDetector(
+                        onTap: () {
+                          final homeBloc = BlocProvider.of<HomeBloc>(context);
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.categoriesDetailsScreen,
+                            arguments: homeBloc,
+                          );
+                        },
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ClipOval(
+                              child: CachedNetworkImage(
+                                imageUrl: item.icon,
+                                width: 100,
+                                height: 100,
+                                // ApiConstance.imageUrl(item.backdropPath!),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 8),
+                            SizedBox(height: 8),
 
-                          Text(
-                            item.name,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                            Text(
+                              item.name,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       );
                     }).toList(),
               ),

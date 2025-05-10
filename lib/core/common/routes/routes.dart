@@ -4,6 +4,7 @@ import 'package:ecommerce_app/features/auth/presentation/screens/forget_password
 import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:ecommerce_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/controller/bloc/home_bloc.dart';
+import 'package:ecommerce_app/features/products/presentation/screens/categories_details_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/categories_screen.dart';
 import 'package:ecommerce_app/features/products/presentation/screens/home_screen.dart';
 import 'package:ecommerce_app/features/splash_screen/persentation/splash_screen.dart';
@@ -17,6 +18,7 @@ class AppRoutes {
   static const homeScreenRoute = '/homeScreen';
   static const forgetPasswordRoute = '/forgetPasswordScreen';
   static const categoriesScreen = '/categoriesScreen';
+  static const categoriesDetailsScreen = '/categoriesDetailsScreen';
   // static Map<String, WidgetBuilder> routes = {
   //   '/': (context) => HomeScreen(),
   //   '/login': (context) => const LoginPage(),
@@ -53,6 +55,20 @@ class RouteGenerator {
                 (_) => BlocProvider.value(
                   value: homeBloc,
                   child: const CategoriesScreen(),
+                ),
+          );
+        }
+
+        // لو مش موجود، نرجع بشاشة error أو نعمل fallback
+        return unDefinedRoute();
+      case AppRoutes.categoriesDetailsScreen:
+        final HomeBloc? homeBloc = settings.arguments as HomeBloc?;
+        if (homeBloc != null) {
+          return MaterialPageRoute(
+            builder:
+                (_) => BlocProvider.value(
+                  value: homeBloc,
+                  child: const CategoriesDetailsScreen(),
                 ),
           );
         }
