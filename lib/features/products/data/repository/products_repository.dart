@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/utils/error/exception.dart';
 import 'package:ecommerce_app/core/utils/error/failure.dart';
 import 'package:ecommerce_app/features/products/data/data_source/remote_data_source/products_data_source.dart';
 import 'package:ecommerce_app/features/products/domain/entities/categories.dart';
+import 'package:ecommerce_app/features/products/domain/entities/categories_details.dart';
 import 'package:ecommerce_app/features/products/domain/entities/home_sliders.dart';
 import 'package:ecommerce_app/features/products/domain/entities/products_top_rated.dart';
 import 'package:ecommerce_app/features/products/domain/repository/base_products_repository.dart';
@@ -45,5 +46,11 @@ class ProductsRepository extends BaseProductsRepository {
         ServerFailure(message: failure.errorMessageModel.statusMessage),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, List<CategoriesProducts>>> getCategoriesProducts() {
+    // TODO: implement getCategoriesProducts
+    throw UnimplementedError();
   }
 }
