@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/features/products/presentation/components/categories_listview.dart';
-import 'package:ecommerce_app/features/products/presentation/components/products_gridview.dart';
+import 'package:ecommerce_app/features/products/presentation/components/categories_product_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesProductsScreen extends StatelessWidget {
@@ -21,7 +21,7 @@ class CategoriesProductsScreen extends StatelessWidget {
           Text('data', style: Theme.of(context).textTheme.headlineMedium),
           CategoriesListView(),
           Text('data', style: Theme.of(context).textTheme.headlineMedium),
-          ProductGridView(),
+          CategoriesProductGridView(),
         ],
       ),
     );

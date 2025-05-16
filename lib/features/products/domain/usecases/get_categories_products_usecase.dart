@@ -4,10 +4,11 @@ import 'package:ecommerce_app/core/utils/error/failure.dart';
 import 'package:ecommerce_app/features/products/domain/entities/categories_details.dart';
 import 'package:ecommerce_app/features/products/domain/repository/base_products_repository.dart';
 
-class GetCategoriesProducts extends BaseUsecase<List<CategoriesProducts>> {
+class GetCategoriesProductsUsecase
+    extends BaseUsecase<List<CategoriesProducts>> {
   final BaseProductsRepository baseProductsRepo;
 
-  GetCategoriesProducts(this.baseProductsRepo);
+  GetCategoriesProductsUsecase(this.baseProductsRepo);
 
   @override
   Future<Either<Failure, List<CategoriesProducts>>> call() async {

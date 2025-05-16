@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/utils/error/exception.dart';
 import 'package:ecommerce_app/core/utils/error/failure.dart';
@@ -40,6 +42,7 @@ class ProductsRepository extends BaseProductsRepository {
   Future<Either<Failure, List<ProductsTopRated>>> getProductsTopRated() async {
     final result = await baseProductsDataSource.getProductsTopRated();
     try {
+      log('Top Rated: $result');
       return Right(result);
     } on ServerException catch (failure) {
       return left(
@@ -49,8 +52,17 @@ class ProductsRepository extends BaseProductsRepository {
   }
 
   @override
-  Future<Either<Failure, List<CategoriesProducts>>> getCategoriesProducts() {
-    // TODO: implement getCategoriesProducts
-    throw UnimplementedError();
+  Future<Either<Failure, List<CategoriesProducts>>>
+  getCategoriesProducts() async {
+    final result = await baseProductsDataSource.getCategoriesProducts();
+    try {
+      log('Category Products: $result');
+      return Right(result);
+    } on ServerException catch (failure) {
+      log('Category Products Error: $failure');
+      return left(
+        ServerFailure(message: failure.errorMessageModel.statusMessage),
+      );
+    }
   }
 }

@@ -12,3 +12,5 @@ class GetHomeSliderEvent extends HomeEvent {}
 class GetCategoriesEvent extends HomeEvent {}
 
 class GetProductsTopRatedEvent extends HomeEvent {}
+
+class GetCategoriesProdustsEvent extends HomeEvent {}

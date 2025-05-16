@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ErrorMessageModel extends Equatable {
-  final String statusMessage;
+  final dynamic statusMessage;
 
   const ErrorMessageModel({required this.statusMessage});
 

@@ -1,6 +1,6 @@
-import 'package:ecommerce_app/features/products/domain/entities/products_top_rated.dart';
+import 'package:ecommerce_app/features/products/domain/entities/categories_details.dart';
 
-class CategoriesProductsModel extends ProductsTopRated {
+class CategoriesProductsModel extends CategoriesProducts {
   const CategoriesProductsModel({
     required super.id,
     required super.title,

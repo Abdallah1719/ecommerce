@@ -7,13 +7,13 @@ import 'package:ecommerce_app/features/products/data/models/categories_products_
 import 'package:ecommerce_app/features/products/data/models/home_sliders_model.dart';
 import 'package:ecommerce_app/features/products/data/models/products_top_rated_model.dart';
 import 'package:ecommerce_app/features/products/domain/entities/categories_details.dart';
-import 'package:ecommerce_app/features/products/domain/usecases/get_categories_products.dart';
+import 'package:ecommerce_app/features/products/domain/usecases/get_categories_products_usecase.dart';
 
 abstract class BaseProductsDataSource {
   Future<List<HomeSlidersModel>> getHomeSliders();
   Future<List<CategoriesModel>> getCategories();
   Future<List<ProductsTopRatedModel>> getProductsTopRated();
-  Future<List<CategoriesProducts>> GetCategoriesProducts();
+  Future<List<CategoriesProducts>> getCategoriesProducts();
 }
 
 class ProductsDataSource extends BaseProductsDataSource {
@@ -64,8 +64,9 @@ class ProductsDataSource extends BaseProductsDataSource {
   }
 
   @override
-  Future<List<CategoriesProducts>> GetCategoriesProducts() async {
+  Future<List<CategoriesProducts>> getCategoriesProducts() async {
     final response = await Dio().get(ApiConstances.categoriesProductsPath);
+    print(response);
     if (response.statusCode == 200) {
       return List<CategoriesProducts>.from(
         (response.data["data"]["data"] as List).map(

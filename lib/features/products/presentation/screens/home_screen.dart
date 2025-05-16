@@ -6,7 +6,7 @@ import 'package:ecommerce_app/generated/l10n.dart';
 import 'package:ecommerce_app/features/products/presentation/components/categories_listview.dart';
 import 'package:ecommerce_app/features/products/presentation/components/home_slider.dart';
 import 'package:ecommerce_app/features/products/presentation/components/home_titles.dart';
-import 'package:ecommerce_app/features/products/presentation/components/products_gridview.dart';
+import 'package:ecommerce_app/features/products/presentation/components/top_rated_products_gridview.dart';
 import 'package:ecommerce_app/features/products/presentation/controller/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +22,8 @@ class HomeScreen extends StatelessWidget {
               sl<HomeBloc>()
                 ..add(GetHomeSliderEvent())
                 ..add(GetCategoriesEvent())
-                ..add(GetProductsTopRatedEvent()),
+                ..add(GetProductsTopRatedEvent())
+                ..add(GetCategoriesProdustsEvent()),
 
       child: Scaffold(
         appBar: GlobalAppBar(),
@@ -75,7 +76,7 @@ class HomeScreen extends StatelessWidget {
               text: S.of(context).popularProducts,
               buttonText: S.of(context).shopNow,
             ),
-            ProductGridView(),
+            TopRatedProductGridView(),
           ],
         ),
       ),
